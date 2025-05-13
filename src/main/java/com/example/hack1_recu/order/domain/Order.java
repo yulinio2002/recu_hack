@@ -1,19 +1,17 @@
 package com.example.hack1_recu.order.domain;
 
 import com.example.hack1_recu.product.domain.Product;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
-import jakarta.persistence.ManyToMany;
+import jakarta.persistence.*;
 import lombok.Data;
 
 import java.util.List;
 
 @Entity
 @Data
+@Table(name = "orders")
 public class Order {
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String email;
 
